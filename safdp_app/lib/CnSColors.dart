@@ -68,7 +68,7 @@ class CnSColors extends StatelessWidget {
               ),
               new Container(
                 padding: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 10.0),
-                child: Text("Complements and Salute", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20,)),
+                child: Text("Compliments and Salute", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20,)),
               ),
               new Container(
                 padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
@@ -193,6 +193,14 @@ class CnSColors extends StatelessWidget {
               new Container(
                 padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
                 child: Text("Colours are retired ceremoniously during the SAF Day Parade when the entire parade will give a final compliment to the Colours. This can be an “emotional” moment as the Colours retired will never be on parade again and it will be slow marched out of the parade square to the tune of “Auld Lang Syne”.", textAlign: TextAlign.justify)
+              ),
+              new Container( //Linkage
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
+                child: Text("https://i-zone.outsystemsenterprise.com/OutSystemsNowService/open.aspx?action=openapp&url=SAFCustomsandTraditionsHandbook", style: new TextStyle(fontSize: 10,))
+              ),
+              new Container( //Linkage
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
+                child: Text("https://www.mindef.gov.sg/oms/dam/publications/eBooks/More_eBooks/ourArmyCustomsTraditions.PDF", style: new TextStyle(fontSize: 10,))
               ),
            ]
           ),

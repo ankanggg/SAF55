@@ -138,21 +138,25 @@ class MyFeedbackState extends State<MyFeedback> {
                         ),
                         initialValue: '',
                         onSaved: (val) => feedbackInfo.name = val,
-                        validator: (val) => val == '' ? val : null,
                       ),
                     ),
                   ),
-                  DropdownButton(
-                    underline: Container(height: 1,color: Colors.black),
-                    value: _selectedFeedbackCategory,
-                    items: _dropdownCategory,
-                    onChanged: onChangeFeedbackCategory,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(130.0, 0.0, 130.0, 0.0),
+                    child: DropdownButtonFormField(
+                      value: _selectedFeedbackCategory,
+                      items: _dropdownCategory,
+                      onChanged: onChangeFeedbackCategory,
+                    ),
                   ),
-                  DropdownButton(
-                    underline: Container(height: 1,color: Colors.black),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(130.0, 0.0, 130.0, 0.0),
+                    child: DropdownButtonFormField(
                     value: _selectedFeedbackContingent,
                     items: _dropdownContingent,
                     onChanged: onChangeFeedbackContingent,
+                    validator: (val) => val == '-' ? 'Please select a contingent' : null,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
@@ -164,7 +168,7 @@ class MyFeedbackState extends State<MyFeedback> {
                         ),
                         initialValue: '',
                         onSaved: (val) => feedbackInfo.description = val,
-                        validator: (val) => val == '' ? val : null,
+                        validator: (val) => val == '' ? 'Please give a description on the problems' : null,
                       ),
                     ),
                   ),
@@ -244,6 +248,7 @@ class FeedbackContingent {
  
   static List<FeedbackContingent> getFeedbackContingent() {
     return <FeedbackContingent>[
+      FeedbackContingent(0, '-'),
       FeedbackContingent(1, 'GOH 1'),
       FeedbackContingent(2, 'GOH 2'),
       FeedbackContingent(3, 'GOH 3'),
@@ -259,11 +264,12 @@ class FeedbackContingent {
       FeedbackContingent(13, 'Contingent 9'),
       FeedbackContingent(14, 'Contingent 10'),
       FeedbackContingent(15, 'Band'),
-      FeedbackContingent(16, 'OSG'),
-      FeedbackContingent(17, 'POG'),
-      FeedbackContingent(18, 'PASG'),
-      FeedbackContingent(19, 'PSG'),
-      FeedbackContingent(20, 'Trainers'),
+      FeedbackContingent(16, 'Colours'),
+      FeedbackContingent(17, 'OSG'),
+      FeedbackContingent(18, 'POG'),
+      FeedbackContingent(19, 'PASG'),
+      FeedbackContingent(20, 'PSG'),
+      FeedbackContingent(21, 'Trainers'),
     ];
   }
 

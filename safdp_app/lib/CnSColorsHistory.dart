@@ -98,6 +98,14 @@ class CnSColorsHistory extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
                 child: Text("Our short history of Colours in the SAF dates back to 1954. Then, there were only two Colours, the Queen’s Colours and the Singapore Volunteer Corps Colours. The then Governor of Singapore, Sir John Nicoll, presented both Colours to the Singapore Volunteer Corps on 8th July 1954 at the Padang, in celebration of the centenary of the Volunteer Corps. The Colours were donated by the City Council to replace those, which were lost during the fall of Singapore in 1942. The re-structuring of the Singapore Volunteer Corps after our Independence in 1965, saw the Corps undertaking a different role in Singapore, hence both Colours were retired.", textAlign: TextAlign.justify)
               ),
+              new Container( //Linkage
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
+                child: Text("https://i-zone.outsystemsenterprise.com/OutSystemsNowService/open.aspx?action=openapp&url=SAFCustomsandTraditionsHandbook", style: new TextStyle(fontSize: 10,))
+              ),
+              new Container( //Linkage
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
+                child: Text("https://www.mindef.gov.sg/oms/dam/publications/eBooks/More_eBooks/ourArmyCustomsTraditions.PDF", style: new TextStyle(fontSize: 10,))
+              ),
            ]
           ),
         ),

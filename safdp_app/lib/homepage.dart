@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'SAFDay2020.dart';
 import 'Messages.dart';
+import 'UsefulInfo.dart';
 import 'CustomAndStandard.dart';
 import 'MyFeedback.dart';
+import 'FunFact.dart';
 
 class Homepage extends StatelessWidget {
   @override
@@ -14,7 +16,7 @@ class Homepage extends StatelessWidget {
         }),
         title: Text('Homepage'),
       ),
-      body : new Container(
+      body : SingleChildScrollView(
         child: new Center(
           child: new Column(
             children: <Widget>[
@@ -52,6 +54,40 @@ class Homepage extends StatelessWidget {
                   child: null,
                 ),
               ),
+              //new Container(
+              //  width: MediaQuery.of(context).size.width * 1,
+              //  height: MediaQuery.of(context).size.height * 0.20,
+              //  margin: EdgeInsets.fromLTRB(0, 0, 0, 15.0),
+              //  decoration: BoxDecoration(
+              //    image: DecorationImage(
+              //      image: AssetImage('assets/UsefulInfo_Banner.jpg'),
+              //     fit:BoxFit.cover,
+              //    ),
+              //  ),
+              //  child: FlatButton(
+              //    onPressed:() {
+              //      Navigator.push(context,MaterialPageRoute(builder: (context)=>UsefulInfo()));
+              //    }, 
+              //    child: null,
+              //  ),
+              //),
+              new Container(
+                width: MediaQuery.of(context).size.width * 1,
+                height: MediaQuery.of(context).size.height * 0.20,
+                margin: EdgeInsets.fromLTRB(0, 0, 0, 15.0),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/Feedback_Banner.jpg'),
+                    fit:BoxFit.cover,
+                  ),
+                ),
+                child: FlatButton(
+                  onPressed:() {
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>MyFeedback()));
+                  }, 
+                  child: null,
+                ),
+              ),
               new Container(
                 width: MediaQuery.of(context).size.width * 1,
                 height: MediaQuery.of(context).size.height * 0.20,
@@ -72,15 +108,16 @@ class Homepage extends StatelessWidget {
               new Container(
                 width: MediaQuery.of(context).size.width * 1,
                 height: MediaQuery.of(context).size.height * 0.20,
+                margin: EdgeInsets.fromLTRB(0, 0, 0, 15.0),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/Feedback_Banner.jpg'),
+                    image: AssetImage('assets/FunFact_Banner.jpg'),
                     fit:BoxFit.cover,
                   ),
                 ),
                 child: FlatButton(
                   onPressed:() {
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>MyFeedback()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>FunFact()));
                   }, 
                   child: null,
                 ),

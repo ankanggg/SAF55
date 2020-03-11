@@ -29,6 +29,7 @@ dependencies:
   photo_view: ^0.9.1
   #firebase_messaging: #Notification
   intl: ^0.16.1 #Date
+  url_launcher: ^5.4.2 #HyperLink
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +66,8 @@ flutter:
     - assets/SAFDay_Banner.jpg 
     - assets/Messages_Banner.jpg
     - assets/CnS_Banner.jpg
+    - assets/FunFact_Banner.jpg
+    - assets/UsefulInfo_Banner.jpg
 
     #Message
     - assets/GeneralAnnoucements_Banner.jpg
@@ -74,6 +77,8 @@ flutter:
 
     #SAFDayParade2020
     - assets/KAH_Banner.jpg
+    - assets/KahParade_Banner.jpg
+    - assets/KahOrganising_Banner.jpg
     - assets/Feedback_Banner.jpg 
     - assets/HistoryOfSAF_Banner.jpg
     - assets/SAF.jpg
@@ -81,7 +86,11 @@ flutter:
     - assets/SAFFirstParade.jpg
     - assets/KAH_ColorRSM.jpg
     - assets/KAH_ParadeCommander.jpg
+    - assets/KAH_Parade2IC.jpg
     - assets/KAH_ParadeRSM.jpg
+    - assets/KAH_SAFDPChairman.jpg
+    - assets/KAH_SAFDPdyChairman.jpg
+    - assets/KAH_SAFDPdyChairman2.jpg
 
     #CnS
     - assets/CnS_Introduction_Banner.jpg

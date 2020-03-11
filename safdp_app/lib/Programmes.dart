@@ -39,14 +39,14 @@ class Programmes extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(0, 0, 0, 15.0),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/CombineRehearsal_Banner.jpg'),
+                    image: AssetImage('assets/ComponentTraining_Banner.jpg'),
                     fit:BoxFit.cover,
                   ),
                 ),
                 child: FlatButton(
                   onPressed:() {
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>CombineRehearsal()));
-                  }, 
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>ComponentTraining()));
+                  },
                   child: null,
                 ),
               ),
@@ -56,14 +56,14 @@ class Programmes extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(0, 0, 0, 15.0),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/ComponentTraining_Banner.jpg'),
+                    image: AssetImage('assets/CombineRehearsal_Banner.jpg'),
                     fit:BoxFit.cover,
                   ),
                 ),
                 child: FlatButton(
                   onPressed:() {
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>ComponentTraining()));
-                  },
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>CombineRehearsal()));
+                  }, 
                   child: null,
                 ),
               ),

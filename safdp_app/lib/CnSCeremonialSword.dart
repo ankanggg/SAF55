@@ -115,6 +115,14 @@ class CnSCeremonialSword extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
                 child: Text("The same principle is true of either the butt salute with a rifle or the present arms. In the latter case even the name implies the offering of the arms to a superior.", textAlign: TextAlign.justify)
               ),
+              new Container( //Linkage
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
+                child: Text("https://i-zone.outsystemsenterprise.com/OutSystemsNowService/open.aspx?action=openapp&url=SAFCustomsandTraditionsHandbook", style: new TextStyle(fontSize: 10,))
+              ),
+              new Container( //Linkage
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
+                child: Text("https://www.mindef.gov.sg/oms/dam/publications/eBooks/More_eBooks/ourArmyCustomsTraditions.PDF", style: new TextStyle(fontSize: 10,))
+              ),
            ]
           ),
         ),

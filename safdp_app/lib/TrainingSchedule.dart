@@ -17,8 +17,8 @@ class TrainingSchedule extends StatelessWidget {
               columnWidths: {1:FractionColumnWidth(.7)},
               children: [
                 TableRow (children: [
-                  Column(children:[Text('Time')]),
-                  Column(children:[Text('Event')]),
+                  Column(children:[Text('Date', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20,))]),
+                  Column(children:[Text('Event', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20,))]),
                 ]),
                 TableRow (children: [
                   Column(children:[Text('21/05')]),
@@ -26,7 +26,7 @@ class TrainingSchedule extends StatelessWidget {
                   ]),
                 TableRow( children: [
                   Column(children:[Text('22/05')]),
-                  Column(children:[Text('Pre-CT2')]),
+                  Column(children:[Text('Pre-CT 2')]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('26/05')]),
@@ -66,7 +66,7 @@ class TrainingSchedule extends StatelessWidget {
                 ]),
                 TableRow( children: [
                   Column(children:[Text('23/06')]),
-                  Column(children:[Text('CR 4 (EXCO-Vetting)')]),
+                  Column(children:[Text('CR 4 (Vetting)')]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('24/06')]),
@@ -74,7 +74,7 @@ class TrainingSchedule extends StatelessWidget {
                 ]),
                 TableRow( children: [
                   Column(children:[Text('25/06')]),
-                  Column(children:[Text('CR 5 (CDF Vetting)')]),
+                  Column(children:[Text('CR 5 (Vetting)')]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('26/06')]),
@@ -94,6 +94,10 @@ class TrainingSchedule extends StatelessWidget {
                 ]),
               ],
             ),
+          ),
+          new Container(
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
+                child: Text("Subjected to changes", textAlign: TextAlign.justify)
           ),
         ],
         ),

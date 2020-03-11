@@ -43,6 +43,14 @@ class CnSPaceStick extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
                 child: Text("The pace stick is the epitome of authority and rank. It is a recognition accorded to a Sergeant Major to carry out his primary responsibility of maintaining high standard of drill, parade and ceremonies as well as upholding the highest standard of regimentation and discipline in the unit.", textAlign: TextAlign.justify)
               ),
+              new Container( //Linkage
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
+                child: Text("https://i-zone.outsystemsenterprise.com/OutSystemsNowService/open.aspx?action=openapp&url=SAFCustomsandTraditionsHandbook", style: new TextStyle(fontSize: 10,))
+              ),
+              new Container( //Linkage
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
+                child: Text("https://www.mindef.gov.sg/oms/dam/publications/eBooks/More_eBooks/ourArmyCustomsTraditions.PDF", style: new TextStyle(fontSize: 10,))
+              ),
            ]
           ),
         ),

@@ -6,7 +6,7 @@ class CombineRehearsal extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo[900],
-        title: Text('Combine Rehearsal 1'),
+        title: Text('Combine Rehearsal'),
       ),
       body : SingleChildScrollView(
         child: Column(children: <Widget>[
@@ -17,8 +17,8 @@ class CombineRehearsal extends StatelessWidget {
               border: TableBorder.all(),
               children: [
                 TableRow (children: [
-                  Column(children:[Text('Time')]),
-                  Column(children:[Text('Event')]),
+                  Column(children:[Text('Time', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20,))]),
+                  Column(children:[Text('Event', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20))]),
                 ]),
                 TableRow (children: [
                   Column(children:[Text('0830')]),
@@ -34,11 +34,11 @@ class CombineRehearsal extends StatelessWidget {
                 ]),
                 TableRow( children: [
                   Column(children:[Text('0930 - 1000')]),
-                  Column(children:[Text('Warm Up and Component Training by Respective Trainers'),]),
+                  Column(children:[Text('Warm Up and Component Training by Respective Trainers', textAlign: TextAlign.center)]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1000 - 1030')]),
-                  Column(children:[Text('Marching In / Out Drill Synchronisation')]),
+                  Column(children:[Text('Marching In / Out Drill Synchronisation'),]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1030 - 1100')]),
@@ -58,7 +58,7 @@ class CombineRehearsal extends StatelessWidget {
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1400 - 1500')]),
-                  Column(children:[Text('Truncated Sequenece Run & Indoor Parade Rehearsal (As Plan)')]),
+                  Column(children:[Text('Truncated Sequenece Run & Indoor Parade Rehearsal (As Plan)', textAlign: TextAlign.center)]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1500 - 1530')]),
@@ -82,10 +82,14 @@ class CombineRehearsal extends StatelessWidget {
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1830 - 1900')]),
-                  Column(children:[Text('PAR (Post Action Review')]),
+                  Column(children:[Text('PAR (Post Action Review)')]),
                 ]),
               ],
             ),
+          ),
+          new Container(
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
+                child: Text("Subjected to changes", textAlign: TextAlign.justify)
           ),
         ],
         ),

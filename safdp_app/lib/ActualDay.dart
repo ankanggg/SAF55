@@ -6,7 +6,7 @@ class ActualDay extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo[900],
-        title: Text('Actual Day'),
+        title: Text('Actual Day (TBC)'),
       ),
       body: SingleChildScrollView(
         child: new Center(
@@ -18,14 +18,52 @@ class ActualDay extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 10.0),
                 decoration: BoxDecoration(
                   image: DecorationImage(
+                  image: AssetImage('assets/Colors_ConsecrationOfColor.jpg'),
+                  fit:BoxFit.cover,
+                ),
+              ),
+              ),
+              new Container(
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
+                child: Text("Conscecration Of Colours", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              ),
+              new Container(
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
+                child: Text("The SAF adopted the British custom for the consecration of the Colours prior the presentation to the Units. The drums are traditionally piled to provide an altar for the consecration.The Colours are then draped on the pile for the consecration, the pikes resting on the hoop to retain the Colours pikes in position. After the Colours have been consecrated, the drums are recovered in the same way. The Colours after being blessed by the various religious leaders, is handed over to the President, who will present the newly consecrated Colours to the CO/Commander of the Unit. The Colours are then trooped.", textAlign: TextAlign.justify),
+              ),
+              new Container(
+                width: MediaQuery.of(context).size.width * 0.9,
+                height: MediaQuery.of(context).size.height * 0.3, 
+                margin: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 10.0),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                  image: AssetImage('assets/CnS_ColorsInDisplay.jpg'),
+                  fit:BoxFit.cover,
+                ),
+              ),
+              ),
+              new Container(
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
+                child: Text("Trooping of Colours", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              ),
+              new Container(
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
+                child: Text("The tradition of Trooping of Colours has been traced to the days of the early mercenaries when men were taught to use their flag as a rallying point in battle. Trooping the Colours before a battle assured that soldiers would recognize them. In the SAF, Trooping of Colours is often performed during unit’s anniversary parade and SAF Day Parade, especially so when a Colours is newly presented after consecration.", textAlign: TextAlign.justify),
+              ),
+              new Container(
+                width: MediaQuery.of(context).size.width * 0.9,
+                height: MediaQuery.of(context).size.height * 0.3, 
+                margin: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 10.0),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
                   image: AssetImage('assets/ActualDay_1.jpg'),
                   fit:BoxFit.cover,
                 ),
               ),
-            ),
+              ),
               new Container(
                 padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
-                child: Text("Inspection Of Guard-Of-Honour", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20,)),
+                child: Text("Inspection Of Guard-Of-Honour", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
               ),
               new Container(
                 padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
@@ -41,10 +79,10 @@ class ActualDay extends StatelessWidget {
                   fit:BoxFit.cover,
                 ),
               ),
-            ),
+              ),
               new Container(
                 padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
-                child: Text("Recital of the SAF Pledge", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20,)),
+                child: Text("Recital of the SAF Pledge", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
               ),
               new Container(
                 padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),

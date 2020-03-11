@@ -3,6 +3,7 @@ import 'package:safdp_app/homepage.dart';
 import 'CnSColorsIntroduction.dart';
 import 'CnSColorsHistory.dart';
 import 'CnSColorsStates.dart';
+import 'CnSPresident.dart';
 import 'CnSColors.dart';
 import 'CnSCeremonialSword.dart';
 import 'CnSPaceStick.dart';
@@ -71,6 +72,23 @@ class CustomAndStandard extends StatelessWidget { //CnS
                 child: FlatButton(
                   onPressed:() {
                     Navigator.push(context,MaterialPageRoute(builder: (context)=>CnSColorsStates()));
+                  },
+                  child: null,
+                ),
+              ),
+              new Container(
+                width: MediaQuery.of(context).size.width * 1,
+                height: MediaQuery.of(context).size.height * 0.10,
+                margin: EdgeInsets.fromLTRB(0, 0, 0, 15.0),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/CnS_ColorStates_Banner.jpg'),
+                    fit:BoxFit.cover,
+                  ),
+                ),
+                child: FlatButton(
+                  onPressed:() {
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>CnSPresident()));
                   },
                   child: null,
                 ),

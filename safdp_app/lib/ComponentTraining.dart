@@ -6,7 +6,7 @@ class ComponentTraining extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo[900],
-        title: Text('Training Schedule'),
+        title: Text('Component Training'),
       ),
       body : SingleChildScrollView(
         child: Column(children: <Widget>[
@@ -17,8 +17,8 @@ class ComponentTraining extends StatelessWidget {
               columnWidths: {1:FractionColumnWidth(.7)},
               children: [
                 TableRow (children: [
-                  Column(children:[Text('Time')]),
-                  Column(children:[Text('Event')]),
+                  Column(children:[Text('Time', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20,))]),
+                  Column(children:[Text('Event', style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20))]),
                 ]),
                 TableRow (children: [
                   Column(children:[Text('0830')]),
@@ -34,11 +34,11 @@ class ComponentTraining extends StatelessWidget {
                 ]),
                 TableRow( children: [
                   Column(children:[Text('0930 - 1000')]),
-                  Column(children:[Text('Warm Up and Component Training by Respective Trainers')]),
+                  Column(children:[Text('Warm Up and Component Training by Respective Trainers', textAlign: TextAlign.center)]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1000 - 1030')]),
-                  Column(children:[Text('GOH, Colours, Markers Drill Synchronisation by Parade RSM')]),
+                  Column(children:[Text(' GOH, Colours, Markers Drill Synchronisation by Parade RSM', textAlign: TextAlign.center)]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1030 - 1100')]),
@@ -46,7 +46,7 @@ class ComponentTraining extends StatelessWidget {
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1100 - 1200')]),
-                  Column(children:[Text('Synchronisaed March In and March Off by Parade RSM')]),
+                  Column(children:[Text('Synchronisaed March In and March Off by Parade RSM', textAlign: TextAlign.center)]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1200 - 1215')]),
@@ -58,7 +58,7 @@ class ComponentTraining extends StatelessWidget {
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1400 - 1500')]),
-                  Column(children:[Text('Synchronisaed March In / Out by Parade RSM')]),
+                  Column(children:[Text('Synchronisaed March In / Out by Parade RSM', textAlign: TextAlign.center)]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1500 - 1530')]),
@@ -66,7 +66,7 @@ class ComponentTraining extends StatelessWidget {
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1500 - 1630')]),
-                  Column(children:[Text('Truncated Sequence Run (Trooping of Colours)')]),
+                  Column(children:[Text('Truncated Sequence Run (Trooping of Colours)', textAlign: TextAlign.center)]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1630 - 1700')]),
@@ -74,7 +74,7 @@ class ComponentTraining extends StatelessWidget {
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1700 - 1800')]),
-                  Column(children:[Text('Truncated Sequence Run (Trooping of Colours)')]),
+                  Column(children:[Text('Truncated Sequence Run (Trooping of Colours)', textAlign: TextAlign.center)]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1800 - 1900')]),
@@ -82,10 +82,14 @@ class ComponentTraining extends StatelessWidget {
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1815 - 1845')]),
-                  Column(children:[Text('PAR (Post Action Review')]),
+                  Column(children:[Text('PAR (Post Action Review)')]),
                 ]),
               ],
             ),
+          ),
+          new Container(
+                padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 20.0),
+                child: Text("Subjected to changes", textAlign: TextAlign.justify)
           ),
         ],
         ),

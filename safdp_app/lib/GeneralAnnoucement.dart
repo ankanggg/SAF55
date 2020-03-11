@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
+import 'package:intl/intl.dart';
 
 class GeneralAnnoucement extends StatefulWidget{
   @override
@@ -16,8 +17,13 @@ class GeneralAnnoucementState extends State<GeneralAnnoucement> {
 
   @override
   void initState(){
+
+    //Date
+    DateFormat dateFormat = DateFormat("yyyy-MM-dd \n HH:mm");
+    var date = dateFormat.format(DateTime.now());
+
     super.initState();
-    generalAnnoucementItem = Item('', '');
+    generalAnnoucementItem = Item('', '', date);
     //final FirebaseDatabase database = new FirebaseDatabase(app:app);
     //safetyMessageRef = database.reference().child('safetyMessageList'); 
     generalAnnoucementRef = FirebaseDatabase.instance.reference().child('General Annoucement'); //The name for the folder.
@@ -54,7 +60,7 @@ class GeneralAnnoucementState extends State<GeneralAnnoucement> {
   Widget build(BuildContext context){
     return Scaffold(
      appBar: AppBar(
-       title: Text('General Annoucements'),
+       title: Text('General Annoucement'),
     ),
     resizeToAvoidBottomPadding: false,
     body: Column(
@@ -117,6 +123,7 @@ class GeneralAnnoucementState extends State<GeneralAnnoucement> {
               leading: Icon(Icons.message, color:Colors.red),
               title: Text(generalAnnoucementList[index].title),
               subtitle: Text(generalAnnoucementList[index].body),
+              trailing: Text(generalAnnoucementList[index].date),
               isThreeLine: true,
             );
           },
@@ -132,18 +139,21 @@ class Item {
    String key;
    String title;
    String body;
+   String date;
   
-   Item(this.title, this.body);
+   Item(this.title, this.body, this.date);
       
    Item.fromSnapshot(DataSnapshot snapshot)
        : key = snapshot.key,
          title = snapshot.value["title"],
-        body = snapshot.value["body"];
+         body = snapshot.value["body"],
+         date = snapshot.value['date'];
     
    toJson() {
      return {
       "title": title,
       "body": body,
+      'date': date
      };
    }
 }
