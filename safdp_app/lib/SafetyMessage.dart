@@ -5,21 +5,9 @@ import 'package:firebase_database/ui/firebase_animated_list.dart';
 //import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:intl/intl.dart';
 
-//Left with connections
-//final FirebaseApp app = FirebaseApp(
-//  name: 'SAFDP',
-//  options: FirebaseOptions(
-//    googleAppID: '1:460224704472:android:8bd02639c5141007c8ccad',
-//    apiKey: 'AIzaSyAUoYgD811Zo4L2qiJ4L_7gls-0o8n6sus',
-//    databaseURL: 'https://safdp-3d302.firebaseio.com/',
-// ),
-//); 
-
 class SafetyMessage extends StatefulWidget{
   @override
   SafetyMessageState createState() => SafetyMessageState();
-
-
 }
 
 class SafetyMessageState extends State<SafetyMessage> {
@@ -132,6 +120,11 @@ class SafetyMessageState extends State<SafetyMessage> {
               child: Flex(
                 direction: Axis.vertical,
                   children: <Widget>[
+                  Container( //Linkage
+                    margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+                    padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
+                    child: Text("Note: Strictly no PDPA, restricted and above information.", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 14), textAlign: TextAlign.center,)
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: ListTile(
@@ -142,7 +135,12 @@ class SafetyMessageState extends State<SafetyMessage> {
                         ),
                         initialValue: '',
                         onSaved: (val) => safetyMessageItem.title = val,
-                        validator: (val) => val == '' ? val : null,
+                        validator: (val) {
+                          if (val.isEmpty) {
+                            return 'Please input a title';
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ),
@@ -156,7 +154,12 @@ class SafetyMessageState extends State<SafetyMessage> {
                         ),
                         initialValue: '',
                         onSaved: (val) => safetyMessageItem.body = val,
-                        validator: (val) => val == '' ? val : null,
+                        validator: (val) {
+                          if (val.isEmpty) {
+                            return 'Please give your description';
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ),

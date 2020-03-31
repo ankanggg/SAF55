@@ -16,7 +16,7 @@ class KAH extends StatelessWidget { //CnS
             children: <Widget>[
               new Container(
                 width: MediaQuery.of(context).size.width * 1,
-                height: MediaQuery.of(context).size.height * 0.10,
+                height: MediaQuery.of(context).size.height * 0.2,
                 margin: EdgeInsets.fromLTRB(0, 0, 0, 15.0),
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -33,7 +33,7 @@ class KAH extends StatelessWidget { //CnS
               ),
               new Container(
                 width: MediaQuery.of(context).size.width * 1,
-                height: MediaQuery.of(context).size.height * 0.10,
+                height: MediaQuery.of(context).size.height * 0.2,
                 margin: EdgeInsets.fromLTRB(0, 0, 0, 15.0),
                 decoration: BoxDecoration(
                   image: DecorationImage(

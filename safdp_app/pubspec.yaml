@@ -61,8 +61,6 @@ flutter:
   assets:
 
     #Template & Homepage
-    - assets/spore.jpg #Template
-    - assets/profile.jpg #Template
     - assets/SAFDay_Banner.jpg 
     - assets/Messages_Banner.jpg
     - assets/CnS_Banner.jpg
@@ -83,11 +81,23 @@ flutter:
     - assets/HistoryOfSAF_Banner.jpg
     - assets/SAF.jpg
     - assets/HistoryOfSAFParade_Banner.jpg
+    - assets/History_BirthOfSAF_Banner.jpg
+    - assets/History_Earlyyears_Banner.jpg
+    - assets/History_MaturingSAF_Banner.jpg
+    - assets/History_WW2_Banner.jpg
     - assets/SAFFirstParade.jpg
     - assets/KAH_ColorRSM.jpg
-    - assets/KAH_ParadeCommander.jpg
+    - assets/KAH_ConductingWarrant1.jpg
+    - assets/KAH_ConductingWarrant2.jpg
+    - assets/KAH_DirectorOfMusic.jpg
+    - assets/KAH_PacChairman.jpg
+    - assets/KAH_PacDyChairman1.jpg
+    - assets/KAH_PacDyChairman2.jpg
     - assets/KAH_Parade2IC.jpg
+    - assets/KAH_ParadeCommander.jpg
+    - assets/KAH_ParadeCommanderReserve.jpg
     - assets/KAH_ParadeRSM.jpg
+    - assets/KAH_ParadeRSMReserve.jpg
     - assets/KAH_SAFDPChairman.jpg
     - assets/KAH_SAFDPdyChairman.jpg
     - assets/KAH_SAFDPdyChairman2.jpg
@@ -97,10 +107,9 @@ flutter:
     - assets/CnS_History_Banner.jpg
     - assets/CnS_ColorStates_Banner.jpg
     - assets/CnS_Colors_Banner.jpg
+    - assets/CnS_PresidentFlag_Banner.jpg
     - assets/CnS_PaceStick_Banner.jpg
     - assets/CnS_CeremonialSword_Banner.jpg
-    - assets/CnS_UniformNo1_Banner.jpg  
-    - assets/CnS_UniformNo4_Banner.jpg
     - assets/CnS_History.jpg
     - assets/CnS_ColorsInDisplay.jpg
     - assets/CnS_ColorStates_NDPDisplay.png
@@ -114,9 +123,28 @@ flutter:
     - assets/CnS_PaceStick.png
     - assets/Colors_ConsecrationOfColor.jpg
     - assets/Colors_ComplementAndSalute.jpg
-    - assets/UniformNo4.jpg 
-    - assets/UniformNo1.jpg 
-    - assets/UniformNo1_Specialist.jpg
+    - assets/CnS_UniformNo1_Banner.jpg  
+    - assets/CnS_UniformNo1_1.jpg
+    - assets/CnS_UniformNo1_2.jpg
+    - assets/CnS_UniformNo1_3.jpg
+    - assets/CnS_UniformNo1_4.jpg
+    - assets/CnS_UniformNo1_5.jpg
+    - assets/CnS_UniformNo1_6.jpg
+    - assets/CnS_UniformNo1_7.jpg
+    - assets/CnS_UniformNo1_8.jpg
+    - assets/CnS_UniformNo1_9.jpg
+    - assets/CnS_UniformNo1_10.jpg
+    - assets/CnS_UniformNo1_11.jpg
+    - assets/CnS_UniformNo1_12.jpg
+    - assets/CnS_UniformNo1_13.jpg
+    - assets/CnS_UniformNo1_14.jpg
+    - assets/CnS_UniformNo4_Banner.jpg
+    - assets/CnS_UniformNo4_1.jpg
+    - assets/CnS_UniformNo4_2.jpg
+    - assets/CnS_UniformNo4_3.jpg
+    - assets/CnS_UniformNo4_4.jpg
+    - assets/CnS_UniformNo4_5.jpg
+    - assets/CnS_UniformNo4_6.jpg
 
     #Programmes
     - assets/Programmes_Banner.jpg
@@ -133,6 +161,15 @@ flutter:
     - assets/ActualDay_3.jpg
     - assets/ActualDay_4.jpg
     - assets/ActualDay_5.jpg
+
+    #Useful Information
+    - assets/UsefulInfo_HeatPrevention_Banner.jpg
+    - assets/UsefulInfo_HeatPrevention1.jpg
+    - assets/UsefulInfo_HeatPrevention2.jpg
+    - assets/UsefulInfo_HeatPrevention3.jpg
+    - assets/UsefulInfo_HeatPrevention4.jpg
+    - assets/UsefulInfo_HeatPrevention5.jpg
+    - assets/UsefulInfo_HeatPrevention6.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

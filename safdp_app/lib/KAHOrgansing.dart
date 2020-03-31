@@ -14,13 +14,12 @@ class KAHState extends State<KAHOrganising> {
   int _current = 0;
 
   List imgList = [
-    'assets/KAH_ParadeCommander.jpg',
-    'assets/KAH_Parade2IC.jpg',
-    'assets/KAH_ParadeRSM.jpg',
-    'assets/KAH_ColorRSM.jpg',
     'assets/KAH_SAFDPChairman.jpg',
     'assets/KAH_SAFDPdyChairman.jpg',
-    'assets/KAH_SAFDPdyChairman2.jpg'
+    'assets/KAH_SAFDPdyChairman2.jpg',
+    'assets/KAH_PacChairman.jpg',
+    'assets/KAH_PacDyChairman1.jpg',
+    'assets/KAH_PacDyChairman2.jpg',
   ];
  
   List<T> map<T>(List list, Function handler) {

@@ -23,8 +23,12 @@ class History extends StatelessWidget {
                 ),
               ),
             ),
+              new Container( //Linkage
+                padding: EdgeInsets.fromLTRB(30.0, 5.0, 30.0, 10.0),
+                child: Text("Credit: National Archives of Singapore                                                                                   ", style: new TextStyle(fontSize: 10,))
+              ),
               new Container(
-                padding: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0),
+                padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 20.0),
                 child: Text("The concept for an Armed Forces Day was mooted in early 1969. The objective for this special day was for the armed forces to reaffirm their pledge of loyalty and dedication to the Singapore Armed Forces (SAF) and the nation. It would also allow them to reflect on their role and responsibility in the defence of the nation.",  textAlign: TextAlign.justify)
               ),
               new Container(
@@ -53,7 +57,7 @@ class History extends StatelessWidget {
               ),
               new Container( //Linkage
                 padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
-                child: Text("https://www.nas.gov.sg/archivesonline/data/pdfdoc/MINDEF_20040701001/MINDEF_20040701003_1.pdf", style: new TextStyle(fontSize: 10,))
+                child: Text("https://www.nas.gov.sg/archivesonline/data/pdfdoc/MINDEF_20040701001/MINDEF_20040701003_1.PDF", style: new TextStyle(fontSize: 10,))
               ),
            ]
           ),

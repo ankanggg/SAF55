@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:safdp_app/homepage.dart';
-import 'GeneralAnnoucement.dart';
+import 'GeneralAnnouncement.dart';
 import 'SafetyMessage.dart';
 import 'TrainerMessage.dart';
 import 'Attendence.dart';
@@ -31,7 +31,7 @@ class Messages extends StatelessWidget {
                 ),
                 child: FlatButton(
                   onPressed:() {
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>GeneralAnnoucement()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>GeneralAnnouncement()));
                   }, 
                   child: null,
                 ),

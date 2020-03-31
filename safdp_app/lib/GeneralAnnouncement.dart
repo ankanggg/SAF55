@@ -3,15 +3,15 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:intl/intl.dart';
 
-class GeneralAnnoucement extends StatefulWidget{
+class GeneralAnnouncement extends StatefulWidget{
   @override
-  GeneralAnnoucementState createState() => GeneralAnnoucementState();
+  GeneralAnnouncementState createState() => GeneralAnnouncementState();
 }
 
-class GeneralAnnoucementState extends State<GeneralAnnoucement> {
-  List<Item> generalAnnoucementList = List(); //Items
-  Item generalAnnoucementItem; //Item
-  DatabaseReference generalAnnoucementRef; //ItemRef
+class GeneralAnnouncementState extends State<GeneralAnnouncement> {
+  List<Item> generalAnnouncementList = List(); //Items
+  Item generalAnnouncementItem; //Item
+  DatabaseReference generalAnnouncementRef; //ItemRef
 
   final GlobalKey<FormState> safetyFormKey = GlobalKey<FormState>();
 
@@ -23,26 +23,26 @@ class GeneralAnnoucementState extends State<GeneralAnnoucement> {
     var date = dateFormat.format(DateTime.now());
 
     super.initState();
-    generalAnnoucementItem = Item('', '', date);
+    generalAnnouncementItem = Item('', '', date);
     //final FirebaseDatabase database = new FirebaseDatabase(app:app);
     //safetyMessageRef = database.reference().child('safetyMessageList'); 
-    generalAnnoucementRef = FirebaseDatabase.instance.reference().child('General Annoucement'); //The name for the folder.
-    generalAnnoucementRef.onChildAdded.listen(_onEntryAdded);
-    generalAnnoucementRef.onChildChanged.listen(_onEntryChanged);
+    generalAnnouncementRef = FirebaseDatabase.instance.reference().child('General Announcement'); //The name for the folder.
+    generalAnnouncementRef.onChildAdded.listen(_onEntryAdded);
+    generalAnnouncementRef.onChildChanged.listen(_onEntryChanged);
   }
 
   _onEntryAdded(Event event){
     setState((){
-      generalAnnoucementList.add(Item.fromSnapshot(event.snapshot));
+      generalAnnouncementList.add(Item.fromSnapshot(event.snapshot));
       });
   }
             
   _onEntryChanged(Event event) {
-      var old = generalAnnoucementList.singleWhere((entry){
+      var old = generalAnnouncementList.singleWhere((entry){
         return entry.key == event.snapshot.key;
     });
     setState((){
-      generalAnnoucementList[generalAnnoucementList.indexOf(old)] = Item.fromSnapshot(event.snapshot);
+      generalAnnouncementList[generalAnnouncementList.indexOf(old)] = Item.fromSnapshot(event.snapshot);
      });
   }
             
@@ -52,7 +52,7 @@ class GeneralAnnoucementState extends State<GeneralAnnoucement> {
      if (form.validate()) {
        form.save();
        form.reset();
-       generalAnnoucementRef.push().set(generalAnnoucementItem.toJson());
+       generalAnnouncementRef.push().set(generalAnnouncementItem.toJson());
      }
   }
 
@@ -60,7 +60,7 @@ class GeneralAnnoucementState extends State<GeneralAnnoucement> {
   Widget build(BuildContext context){
     return Scaffold(
      appBar: AppBar(
-       title: Text('General Annoucement'),
+       title: Text('General Announcement'),
     ),
     resizeToAvoidBottomPadding: false,
     body: Column(
@@ -73,6 +73,11 @@ class GeneralAnnoucementState extends State<GeneralAnnoucement> {
               child: Flex(
                 direction: Axis.vertical,
                   children: <Widget>[
+                  Container( //Linkage
+                    margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+                    padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
+                    child: Text("Note: Strictly no PDPA, restricted and above information.", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 14), textAlign: TextAlign.center,)
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: ListTile(
@@ -82,8 +87,13 @@ class GeneralAnnoucementState extends State<GeneralAnnoucement> {
                           labelText: 'Title'
                         ),
                         initialValue: '',
-                        onSaved: (val) => generalAnnoucementItem.title = val,
-                        validator: (val) => val == '' ? val : null,
+                        onSaved: (val) => generalAnnouncementItem.title = val,
+                        validator: (val) {
+                          if (val.isEmpty) {
+                            return 'Please input a title';
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ),
@@ -96,8 +106,13 @@ class GeneralAnnoucementState extends State<GeneralAnnoucement> {
                           labelText: 'Description'
                         ),
                         initialValue: '',
-                        onSaved: (val) => generalAnnoucementItem.body = val,
-                        validator: (val) => val == '' ? val : null,
+                        onSaved: (val) => generalAnnouncementItem.body = val,
+                        validator: (val) {
+                          if (val.isEmpty) {
+                            return 'Please input a description';
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ),
@@ -117,13 +132,13 @@ class GeneralAnnoucementState extends State<GeneralAnnoucement> {
          ),
          Flexible(
            child: FirebaseAnimatedList(
-            query: generalAnnoucementRef,
+            query: generalAnnouncementRef,
             itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
             return new ListTile(
               leading: Icon(Icons.message, color:Colors.red),
-              title: Text(generalAnnoucementList[index].title),
-              subtitle: Text(generalAnnoucementList[index].body),
-              trailing: Text(generalAnnoucementList[index].date),
+              title: Text(generalAnnouncementList[index].title),
+              subtitle: Text(generalAnnouncementList[index].body),
+              trailing: Text(generalAnnouncementList[index].date),
               isThreeLine: true,
             );
           },

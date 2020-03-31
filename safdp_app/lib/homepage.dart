@@ -54,23 +54,23 @@ class Homepage extends StatelessWidget {
                   child: null,
                 ),
               ),
-              //new Container(
-              //  width: MediaQuery.of(context).size.width * 1,
-              //  height: MediaQuery.of(context).size.height * 0.20,
-              //  margin: EdgeInsets.fromLTRB(0, 0, 0, 15.0),
-              //  decoration: BoxDecoration(
-              //    image: DecorationImage(
-              //      image: AssetImage('assets/UsefulInfo_Banner.jpg'),
-              //     fit:BoxFit.cover,
-              //    ),
-              //  ),
-              //  child: FlatButton(
-              //    onPressed:() {
-              //      Navigator.push(context,MaterialPageRoute(builder: (context)=>UsefulInfo()));
-              //    }, 
-              //    child: null,
-              //  ),
-              //),
+              new Container(
+                width: MediaQuery.of(context).size.width * 1,
+                height: MediaQuery.of(context).size.height * 0.20,
+                margin: EdgeInsets.fromLTRB(0, 0, 0, 15.0),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/CnS_Banner.jpg'),
+                    fit:BoxFit.cover,
+                  ),
+                ),
+                child: FlatButton(
+                  onPressed:() {
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>CustomAndStandard()));
+                  }, 
+                  child: null,
+                ),
+              ),
               new Container(
                 width: MediaQuery.of(context).size.width * 1,
                 height: MediaQuery.of(context).size.height * 0.20,
@@ -94,13 +94,13 @@ class Homepage extends StatelessWidget {
                 margin: EdgeInsets.fromLTRB(0, 0, 0, 15.0),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/CnS_Banner.jpg'),
-                    fit:BoxFit.cover,
+                    image: AssetImage('assets/UsefulInfo_Banner.jpg'),
+                   fit:BoxFit.cover,
                   ),
                 ),
                 child: FlatButton(
                   onPressed:() {
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>CustomAndStandard()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>UsefulInfo()));
                   }, 
                   child: null,
                 ),

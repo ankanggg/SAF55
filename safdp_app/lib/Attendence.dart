@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-//import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:intl/intl.dart';
+import 'AttendenceView.dart';
 
 class Attendence extends StatefulWidget{
   @override
@@ -21,11 +20,11 @@ class AttendenceState extends State<Attendence> {
     super.initState();
 
     //Date
-    DateFormat dateFormat = DateFormat("dd-MM");
+    DateFormat dateFormat = DateFormat("dd-MM \n HH:mm");
     var date = dateFormat.format(DateTime.now());
 
-    attendenceItem = Item(date, '', '', '','');
-    attendenceRef = FirebaseDatabase.instance.reference().child('Attendence'); //The name for the folder.
+    attendenceItem = Item('', date, '', '','');
+    attendenceRef = FirebaseDatabase.instance.reference().child('Attendance'); //The name for the folder.
     attendenceRef.onChildAdded.listen(_onEntryAdded);
     attendenceRef.onChildChanged.listen(_onEntryChanged);
   }
@@ -59,7 +58,7 @@ class AttendenceState extends State<Attendence> {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-       title: Text('Attendence Taking'),
+       title: Text('Attendance Taking'),
     ),
     resizeToAvoidBottomPadding: false,
     body: Column(
@@ -73,30 +72,25 @@ class AttendenceState extends State<Attendence> {
                 direction: Axis.vertical,
                   children: <Widget>[
                   Container( //Linkage
-                    padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
-                    child: Text("Please input in this format: Example:",)
+                    margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+                    padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
+                    child: Text("Please input the attendance in the format", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 14))
                   ),
                   //columnWidths: {1:FractionColumnWidth(.3)},
                   Padding(
-                    padding: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                     child: Table(
                       children: [
                         TableRow (children: [
-                          Column(children:[Text('Guest of Honor', textAlign: TextAlign.center,)]),
-                          Column(children:[Text('Contingent',textAlign: TextAlign.center,)]),
+                          Column(children:[Text('GOH 1-4', textAlign: TextAlign.center,)]),
+                          Column(children:[Text('C 1-10',textAlign: TextAlign.center,)]),
                           Column(children:[Text('Band',textAlign: TextAlign.center,)]),
-                          Column(children:[Text('Colours',textAlign: TextAlign.center,)]),
-                        ]),
-                        TableRow (children: [
-                          Column(children:[Text('GOH', textAlign: TextAlign.center,)]),
-                          Column(children:[Text('C',textAlign: TextAlign.center,)]),
-                          Column(children:[Text('Band',textAlign: TextAlign.center,)]),
-                          Column(children:[Text('Colours',textAlign: TextAlign.center,)]),
+                          Column(children:[Text('Colour',textAlign: TextAlign.center,)]),
                         ]),
                       ]),     
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
                     child: ListTile(
                       leading: Icon(Icons.info, size:28, color:Colors.red),
                       title: TextFormField(
@@ -105,12 +99,17 @@ class AttendenceState extends State<Attendence> {
                         ),
                         initialValue: '',
                         onSaved: (val) => attendenceItem.contingent = val,
-                        validator: (val) => val == '' ? val : null,
+                        validator: (val) {
+                          if (val.isEmpty) {
+                            return 'Please follow the format & input your contingent';
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
                     child: ListTile(
                       leading: Icon(Icons.info, size:28, color:Colors.red),
                       title: TextFormField(
@@ -121,13 +120,13 @@ class AttendenceState extends State<Attendence> {
                         onSaved: (val) => attendenceItem.present = val,
                         validator: (val) {
                           final isDigitsOnly = int.tryParse(val);
-                          return isDigitsOnly == null ? 'Input needs to be digits only' : null;
+                          return isDigitsOnly == null ? 'Please input a number' : null;
                         },
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
                     child: ListTile(
                       leading: Icon(Icons.info, size:28, color:Colors.red),
                       title: TextFormField(
@@ -137,13 +136,13 @@ class AttendenceState extends State<Attendence> {
                         onSaved: (val) => attendenceItem.mc = val,
                         validator: (val) {
                           final isDigitsOnly = int.tryParse(val);
-                          return isDigitsOnly == null ? 'Input needs to be digits only' : null;
+                          return isDigitsOnly == null ? 'Please input a number' : null;
                         },
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
                     child: ListTile(
                       leading: Icon(Icons.info, size:28, color:Colors.red),
                       title: TextFormField(
@@ -154,7 +153,7 @@ class AttendenceState extends State<Attendence> {
                         onSaved: (val) => attendenceItem.other = val,
                         validator: (val) {
                           final isDigitsOnly = int.tryParse(val);
-                          return isDigitsOnly == null ? 'Input needs to be digits only' : null;
+                          return isDigitsOnly == null ? 'Please input a number' : null;
                         },
                       ),
                     ),
@@ -173,32 +172,18 @@ class AttendenceState extends State<Attendence> {
             ),
           ),
          ),
-         Flexible(
-           child: FirebaseAnimatedList(
-            query: attendenceRef,
-            itemBuilder: (BuildContext context, DataSnapshot snapshot, Animation<double> animation, int index){
-            return new SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: DataTable(
-                columns:[
-                DataColumn(label: Text(attendenceList[index].contingent!=null?attendenceList[index].contingent:'')),
-                DataColumn(label: Text('Present')),
-                DataColumn(label: Text('MC')),
-                DataColumn(label: Text('Others')),
-                ], //Columns
-                rows: [
-                  DataRow(
-                    cells: [
-                      DataCell(Text(attendenceList[index].date!=null?attendenceList[index].date:'')),
-                      DataCell(Text(attendenceList[index].present!=null?attendenceList[index].present:'')),
-                      DataCell(Text(attendenceList[index].mc!=null?attendenceList[index].mc:'')),
-                      DataCell(Text(attendenceList[index].other!=null?attendenceList[index].other:'')),
-                    ],
-                  ),
-                ], //Rows
-                ),
-              );
+         Container(
+          margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+          child: Center(
+            child: RaisedButton(
+              padding: EdgeInsets.fromLTRB(100.0, 20.0, 100.0, 20.0),
+              textColor: Colors.white,
+              color:Colors.red,
+              child: new Text("View Attendence"),
+              onPressed: (){
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>AttendenceView()));
               },
+            ),
           ),
         ),
      ],
@@ -219,7 +204,7 @@ class Item {
       
    Item.fromSnapshot(DataSnapshot snapshot)
        : key = snapshot.key,
-          contingent = snapshot.value["contingent"],
+         contingent = snapshot.value["contingent"],
          date = snapshot.value["date"],
          present = snapshot.value["present"],
          mc = snapshot.value["mc"],

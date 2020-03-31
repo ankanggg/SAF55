@@ -19,7 +19,7 @@ class CustomAndStandard extends StatelessWidget { //CnS
         leading:IconButton(icon: Icon(Icons.arrow_back), onPressed: (){
           Navigator.push(context,MaterialPageRoute(builder: (context)=>Homepage()));
         }),
-        title: Text('Custom & Standard'),
+        title: Text('Customs & Standards'),
       ),
       body: SingleChildScrollView(
         child: new Center(
@@ -82,7 +82,7 @@ class CustomAndStandard extends StatelessWidget { //CnS
                 margin: EdgeInsets.fromLTRB(0, 0, 0, 15.0),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/CnS_ColorStates_Banner.jpg'),
+                    image: AssetImage('assets/CnS_PresidentFlag_Banner.jpg'),
                     fit:BoxFit.cover,
                   ),
                 ),

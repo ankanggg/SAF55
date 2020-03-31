@@ -82,6 +82,11 @@ class TrainerMessageState extends State<TrainerMessage> {
               child: Flex(
                 direction: Axis.vertical,
                   children: <Widget>[
+                  Container( //Linkage
+                    margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+                    padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
+                    child: Text("Note: Strictly no PDPA, restricted and above information.", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 14), textAlign: TextAlign.center,)
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: ListTile(
@@ -92,7 +97,12 @@ class TrainerMessageState extends State<TrainerMessage> {
                         ),
                         initialValue: '',
                         onSaved: (val) => trainingMessageItem.title = val,
-                        validator: (val) => val == '' ? val : null,
+                        validator: (val) {
+                          if (val.isEmpty) {
+                            return 'Please input a title';
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ),
@@ -106,7 +116,12 @@ class TrainerMessageState extends State<TrainerMessage> {
                         ),
                         initialValue: '',
                         onSaved: (val) => trainingMessageItem.body = val,
-                        validator: (val) => val == '' ? val : null,
+                        validator: (val) {
+                          if (val.isEmpty) {
+                            return 'Please input a description';
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ),

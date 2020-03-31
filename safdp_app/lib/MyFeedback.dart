@@ -126,7 +126,12 @@ class MyFeedbackState extends State<MyFeedback> {
                 children: <Widget>[
                   Container(
                   padding: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 5.0),
-                  child: Text("Please provide your honest feedback", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20,)),
+                  child: Text("Please provide your honest feedback", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,),
+                  ),
+                  Container( //Linkage
+                    margin: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 0.0),
+                    padding: EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
+                    child: Text("Note: Strictly no PDPA, restricted and above information.", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 14), textAlign: TextAlign.center,)
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
@@ -155,7 +160,6 @@ class MyFeedbackState extends State<MyFeedback> {
                     value: _selectedFeedbackContingent,
                     items: _dropdownContingent,
                     onChanged: onChangeFeedbackContingent,
-                    validator: (val) => val == '-' ? 'Please select a contingent' : null,
                     ),
                   ),
                   Padding(
@@ -168,7 +172,12 @@ class MyFeedbackState extends State<MyFeedback> {
                         ),
                         initialValue: '',
                         onSaved: (val) => feedbackInfo.description = val,
-                        validator: (val) => val == '' ? 'Please give a description on the problems' : null,
+                        validator: (val) {
+                          if (val.isEmpty) {
+                            return 'Please give your description';
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ),
@@ -219,6 +228,7 @@ class FeedbackCategory {
  
   static List<FeedbackCategory> getFeedbackCategories() {
     return <FeedbackCategory>[
+      FeedbackCategory(0, 'Please Select'),
       FeedbackCategory(1, 'Food'),
       FeedbackCategory(2, 'Logistic'),
       FeedbackCategory(3, 'Safety'),
@@ -248,7 +258,7 @@ class FeedbackContingent {
  
   static List<FeedbackContingent> getFeedbackContingent() {
     return <FeedbackContingent>[
-      FeedbackContingent(0, '-'),
+      FeedbackContingent(0, 'Please Select'),
       FeedbackContingent(1, 'GOH 1'),
       FeedbackContingent(2, 'GOH 2'),
       FeedbackContingent(3, 'GOH 3'),

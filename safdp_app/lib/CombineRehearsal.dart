@@ -38,7 +38,7 @@ class CombineRehearsal extends StatelessWidget {
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1000 - 1030')]),
-                  Column(children:[Text('Marching In / Out Drill Synchronisation'),]),
+                  Column(children:[Text('Marching In / Out Drill Synchronisation', textAlign: TextAlign.center),]),
                 ]),
                 TableRow( children: [
                   Column(children:[Text('1030 - 1100')]),
